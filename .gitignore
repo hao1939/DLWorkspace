@@ -38,6 +38,7 @@ src/WebUI/dotnet/WebPortal/userconfig.json
 src/WebUI/dotnet/WebPortal/configAuth.json
 src/WebUI/dotnet/WebPortal/Master-Templates.json
 src/WebUI/dotnet/WebPortal/hosting.json
+**package-lock.json
 **/wwwroot/*
 **/bin/Release/*
 **/bin/Debug/*
@@ -61,3 +62,8 @@ src/WebUI/dotnet/WebPortal/hosting.json
 /.vs/DLWorkspace/v15/.suo
 
 cluster-autoscaler
+src/ClusterBootstrap/services/monitor/grafana-config.yaml
+src/ClusterBootstrap/services/monitor/prometheus-alerting.yaml
+src/ClusterBootstrap/services/monitor/alert-templates.yaml
+src/ClusterBootstrap/services/jobmanager/dlws-scripts.yaml
+src/ClusterBootstrap/services/monitor/alerting/kill-idle.rules

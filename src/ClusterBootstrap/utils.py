@@ -99,6 +99,9 @@ def render_template_directory(template_dir, target_dir,config, verbose=False, ex
         if not os.path.exists( markfile ):
             # print "Write DO_NOT_WRITE"
             open( markfile, 'w').close()
+        if os.path.isfile(os.path.join(template_dir, "pre-render.sh")):
+            pre_reder = os.path.join(template_dir, "pre-render.sh")
+            os.system("sh " + pre_reder)
         filenames = os.listdir(template_dir)
         for filename in filenames:
             if filename == "copy_dir":
@@ -166,7 +169,7 @@ def sudo_scp (identity_file, source, target, user, host,changePermission=False, 
         cmd += " ; sudo chmod +x %s" % target
     if verbose:
         print cmd
-    SSH_exec_cmd(identity_file, user, host, cmd, False)
+    SSH_exec_cmd(identity_file, user, host, cmd, verbose)
 
 # Execute a remote SSH cmd with identity file (private SSH key), user, host
 # Return the output of the remote command to local
